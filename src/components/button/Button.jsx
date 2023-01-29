@@ -1,13 +1,24 @@
 import React from "react";
-import "./Button.css";
+import styled from "styled-components";
+import ButtonSecond from "../UI/ButtonSecond";
 
-const Button = (props) => {
+const Delete = ({onClose, onDelete}) => {
   return (
-    <div>
-      {}
-      <button className={props.class}>{props.text}</button>
-    </div>
+   <div>
+      <h3>Are sure you wanna delete?</h3>
+      <ButtonImpotant>
+        <ButtonSecond color="white" textColor="grey" onClick={onClose}> 
+          No
+        </ButtonSecond>
+        <ButtonSecond color="grey" onClick={onDelete}>Yes</ButtonSecond>
+      </ButtonImpotant>
+      </div>
   );
 };
 
-export default Button;
+export default Delete;
+
+const ButtonImpotant = styled.div`
+  display: flex;
+  justify-content: end;
+`;
